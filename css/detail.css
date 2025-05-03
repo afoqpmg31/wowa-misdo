@@ -1,0 +1,883 @@
+@charset "utf-8";
+
+/* sns_block
+-------------------------------------------------- */
+
+.sns_block{
+  padding-right: 25px;
+  padding-left: 25px;
+}
+.sns_inner{
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.sns_block .sns_list{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.sns_block .sns_list li{}
+.sns_block .sns_list li.sns_line{}
+.sns_block .sns_list li.sns_tw{}
+.sns_block .sns_list li.sns_fb{
+  width: 91px;
+}
+.sns_block .sns_list li iframe{
+  vertical-align: top;
+}
+.sns_block .sns_list li.sns_fb .fb_iframe_widget span{
+  vertical-align: top !important;
+}
+
+@media print, screen and (min-width:768px){
+  .sns_block{
+    margin-top: 17px;
+  }
+  .sns_block .sns_list li{
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .sns_block{
+    margin-top: 15px;
+  }
+  .sns_block .sns_list li{
+    margin-left: 8px;
+  }
+  .sns_block .sns_list li:first-child{
+    margin-left: 0;
+  }
+}
+
+/* detail_block
+-------------------------------------------------- */
+
+.detail_block{}
+.detail_inner{}
+
+.detail_block .detail_main{}
+
+/*detail_slider*/
+.detail_block .detail_main .detail_slider{}
+.detail_block .detail_main .detail_slider .slider_inner{}
+.detail_block .detail_main .detail_slider .slider{}
+.detail_block .detail_main .detail_slider .slider ul{
+  opacity: 0;
+  transition: opacity .3s linear;
+}
+.detail_block .detail_main .detail_slider .slider ul.slick-initialized{
+  opacity: 1;
+}
+.detail_block .detail_main .detail_slider .slider ul li{
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+.detail_block .detail_main .detail_slider .slider ul li img{
+  width: 100%;
+}
+.detail_block .detail_main .detail_slider .thumbnail{}
+.detail_block .detail_main .detail_slider .thumbnail ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+.detail_block .detail_main .detail_slider .thumbnail ul li{}
+.detail_block .detail_main .detail_slider .thumbnail ul li:nth-of-type(-n+3){
+  margin-top: 0;
+}
+.detail_block .detail_main .detail_slider .thumbnail ul li:nth-child(3n){
+  margin-right: 0;
+}
+.detail_block .detail_main .detail_slider .thumbnail ul li img{
+  width: 100%;
+}
+.detail_block .detail_main .detail_slider .thumbnail ul li a{
+  border: 1px solid #ccc;
+  display: block;
+  overflow: hidden;
+}
+
+/*main_info*/
+.detail_block .detail_main .main_info{}
+.detail_block .detail_main .main_info .cat_tag{}
+.detail_block .detail_main .main_info .cat_tag ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+.detail_block .detail_main .main_info .cat_tag ul li{
+  position: relative;
+  display: flex;
+}
+.detail_block .detail_main .main_info .cat_tag ul li a{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #FFFCEE;
+  border: 1px solid #551900;
+  border-radius: 4px;
+  padding: 0.5em 5px;
+  line-height: 1.4;
+  font-weight: bold;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  cursor: pointer;
+  z-index: 0;
+}
+.detail_block .detail_main .main_info .cat_tag ul li .cat_tag_txt{
+  display: none;
+  position: absolute;
+  top: 41px;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #551900;
+  border-radius: 4px;
+  width: 500px;
+  padding: 0.5em 1em;
+  z-index: 1;
+}
+.detail_block .detail_main .main_info .cat_tag ul li.is-active .cat_tag_txt{
+  display: block;
+}
+.detail_block .detail_main .main_info .cat_tag ul li .cat_tag_txt::before{
+  content: "";
+  position: absolute;
+  margin: 0;
+  top: -11px;
+  left: 2em;
+  width: 0;
+  height: 0;
+  border-top: 11px solid #551900;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  transform: rotateZ(180deg);
+  z-index: 1;
+}
+.detail_block .detail_main .main_info .cat_tag ul li .cat_tag_txt::after{
+  content: "";
+  position: absolute;
+  margin: 0;
+  top: -9px;
+  left: 2em;
+  width: 0;
+  height: 0;
+  border-top: 11px solid #fff;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  transform: rotateZ(180deg);
+  z-index: 1;
+}
+.detail_block .detail_main .main_info .prd_num{
+  line-height: 1;
+}
+.detail_block .detail_main .main_info .prd_num p{
+  background-color: #ECECEC;
+  border-radius: 4px;
+  display: inline-block;
+}
+.detail_block .detail_main .main_info .prd_exp{}
+.detail_block .detail_main .main_info .prd_price{}
+.detail_block .detail_main .main_info .prd_price + .prd_price{
+  border-top: 1px solid #ccc;
+  margin-top: 15px;
+  padding-top: 12px;
+}
+.detail_block .detail_main .main_info .prd_price .prd_price_hd{
+  font-weight: bold;
+}
+.detail_block .detail_main .main_info .prd_price .prd_price_tax{
+  display: flex;
+  align-items: baseline;
+  line-height: 1.2;
+}
+.detail_block .detail_main .main_info .prd_price .prd_price_tax dt{
+  width: 6.5em;
+  padding-right: 0.5em;
+}
+.detail_block .detail_main .main_info .prd_price .prd_price_tax dd{}
+.detail_block .detail_main .main_info .prd_price .prd_price_takeout,
+.detail_block .detail_main .main_info .prd_price .prd_price_eatin{
+  display: flex;
+  align-items: baseline;
+  line-height: 1.2;
+}
+.detail_block .detail_main .main_info .prd_price .prd_price_takeout dt,
+.detail_block .detail_main .main_info .prd_price .prd_price_eatin dt{
+  padding-right: 0.5em;
+}
+.detail_block .detail_main .main_info .prd_price .prd_price_takeout dt .kind,
+.detail_block .detail_main .main_info .prd_price .prd_price_eatin dt .kind{
+  font-weight: bold;
+}
+.detail_block .detail_main .main_info .prd_price .prd_price_takeout dt .tax,
+.detail_block .detail_main .main_info .prd_price .prd_price_eatin dt .tax{}
+.detail_block .detail_main .main_info .prd_price .prd_price_takeout dd,
+.detail_block .detail_main .main_info .prd_price .prd_price_eatin dd{
+  font-weight: bold;
+}
+.detail_block .detail_main .main_info .prd_price .prd_price_takeout dd .unit,
+.detail_block .detail_main .main_info .prd_price .prd_price_eatin dd .unit{}
+.detail_block .detail_main .main_info .prd_price .prd_price_takeout dd .price,
+.detail_block .detail_main .main_info .prd_price .prd_price_eatin dd .price{}
+.detail_block .detail_main .main_info .prd_btns{}
+.detail_block .detail_main .main_info .prd_btns ul{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.detail_block .detail_main .main_info .prd_btns li{
+  width: 48.333%;
+}
+.detail_block .detail_main .main_info .prd_btns li:nth-of-type(-n+2){
+  margin-top: 0;
+}
+.detail_block .detail_main .main_info .prd_btns li a{
+  width: 100%;
+  min-width: auto;
+}
+.detail_block .detail_main .main_info .prd_btns li a span{}
+
+.detail_block .detail_main .main_info .prd_note{}
+.detail_block .detail_main .main_info .prd_note li{
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+/*detail_ingredient*/
+.detail_block .detail_ingredient{
+  background-color: hsl(0, 0%, 96%);
+}
+.detail_block .detail_ingredient .detail_ingredient_table{
+  background-color: #fff;
+}
+.detail_block .detail_ingredient .detail_ingredient_table + .detail_ingredient_table{
+  margin-top: 20px;
+}
+.detail_block .detail_ingredient .detail_ingredient_hd{
+  font-weight: bold;
+}
+.detail_block .detail_ingredient .detail_ingredient_cnt{}
+.detail_block .detail_ingredient .detail_ingredient_hd + .detail_ingredient_cnt,
+.detail_block .detail_ingredient .detail_ingredient_cnt:first-of-type{
+  margin-top: 0;
+}
+.detail_block .detail_ingredient .cap{
+  font-weight: bold;
+}
+.detail_block .detail_ingredient .ingredient_list{}
+.detail_block .detail_ingredient .ingredient_list ul{
+  display: flex;
+  justify-content: flex-start;
+}
+.detail_block .detail_ingredient .ingredient_list ul li{
+  border-bottom: 1px solid #ccc;
+}
+.detail_block .detail_ingredient .ingredient_list ul li dl{
+  display: flex;
+}
+.detail_block .detail_ingredient .ingredient_list ul li dt{
+  display: flex;
+}
+.detail_block .detail_ingredient .ingredient_list ul li dt span{
+  padding-right: 0.2em;
+}
+.detail_block .detail_ingredient .ingredient_list ul li dd{}
+.detail_block .detail_ingredient .ingredient_list ul li .name{
+  font-weight: bold;
+}
+.detail_block .detail_ingredient .ingredient_list ul li .sep{}
+/*栄養成分*/
+.detail_block .detail_ingredient .ingredient_list.nutrition_list{}
+/*アレルギー特定原材料*/
+.detail_block .detail_ingredient .ingredient_list.allergy_list{}
+
+.detail_block .detail_ingredient .detail_ingredient_note{}
+.detail_block .detail_ingredient .detail_ingredient_note ul{}
+.detail_block .detail_ingredient .detail_ingredient_note ul li{
+  padding-left: 1em;
+  line-height: 1.8;
+  text-indent: -1em;
+}
+
+@media print, screen and (min-width:768px){
+  .detail_block{
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  .detail_inner{
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .detail_block .detail_main{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /*detail_slider*/
+  .detail_block .detail_main .detail_slider{
+    width: calc((100% - 500px) - 4%);
+  }
+  .detail_block .detail_main .detail_slider .slider ul li{
+    border-radius: 20px;
+    margin: 0 1px;
+  }
+  .detail_block .detail_main .detail_slider .thumbnail{
+    margin-top: 20px;
+  }
+  .detail_block .detail_main .detail_slider .thumbnail ul li{
+    width: 30%;
+    margin-top: 1em;
+    margin-right: 5%;
+  }
+  .detail_block .detail_main .detail_slider .thumbnail ul li a{
+    border-radius: 6px;
+  }
+
+  /*main_info*/
+  .detail_block .detail_main .main_info{
+    width: 500px;
+  }
+  .detail_block .detail_main .main_info .cat_tag{
+    margin-top: 25px;
+  }
+  .detail_block .detail_main .main_info .cat_tag ul li{
+    width: 162px;
+    margin-right: 7px;
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+  .detail_block .detail_main .main_info .cat_tag ul li:nth-child(3n+2) .cat_tag_txt{
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+  }
+  .detail_block .detail_main .main_info .cat_tag ul li:nth-child(3n) .cat_tag_txt{
+    left: auto;
+    right: 0;
+  }
+  .detail_block .detail_main .main_info .cat_tag ul li:nth-child(3n){
+    margin-right: 0;
+  }
+  .detail_block .detail_main .main_info .cat_tag ul li:nth-child(3n+2) .cat_tag_txt::before,
+  .detail_block .detail_main .main_info .cat_tag ul li:nth-child(3n+2) .cat_tag_txt::after{
+    left: 50%;
+  }
+  .detail_block .detail_main .main_info .cat_tag ul li:nth-child(3n) .cat_tag_txt::before,
+  .detail_block .detail_main .main_info .cat_tag ul li:nth-child(3n) .cat_tag_txt::after{
+    left: auto;
+    right: 2em;
+  }
+  .detail_block .detail_main .main_info .prd_num{
+    margin-top: 20px;
+  }
+  .detail_block .detail_main .main_info .prd_num p{
+    padding: 0.75em 1.68em;
+    font-size: 12px;
+  }
+  .detail_block .detail_main .main_info .prd_exp{
+    margin-top: 12px;
+  }
+  .detail_block .detail_main .main_info .prd_price{
+    margin-top: 30px;
+  }
+  .detail_block .detail_main .main_info .prd_price .prd_price_hd{
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .detail_block .detail_main .main_info .prd_price .prd_price_takeout{
+    margin-top: 10px;
+  }
+  .detail_block .detail_main .main_info .prd_price .prd_price_eatin{
+    margin-top: 5px;
+  }
+  .detail_block .detail_main .main_info .prd_price .prd_price_takeout dt,
+  .detail_block .detail_main .main_info .prd_price .prd_price_eatin dt{
+    width: 13.5em;
+  }
+  .detail_block .detail_main .main_info .prd_price .prd_price_takeout dd .unit,
+  .detail_block .detail_main .main_info .prd_price .prd_price_eatin dd .unit{
+    font-size: 22px;
+  }
+  .detail_block .detail_main .main_info .prd_price .prd_price_takeout dd .price,
+  .detail_block .detail_main .main_info .prd_price .prd_price_eatin dd .price{
+    font-size: 30px;
+  }
+  .detail_block .detail_main .main_info .prd_btns{
+    margin-top: 40px;
+  }
+  .detail_block .detail_main .main_info .prd_note{
+    margin-top: 30px;
+  }
+  .detail_block .detail_main .main_info .prd_note li{
+    font-size: 12px;
+  }
+  .detail_block .detail_main .main_info .prd_btns li{
+    margin-top: 20px;
+  }
+  .detail_block .detail_main .main_info .prd_btns li a:after{
+    width: 8px;
+    right: 30px;
+  }
+  .detail_block .detail_main .main_info .prd_btns li.btn_shop a,
+  .detail_block .detail_main .main_info .prd_btns li.btn_order a,
+  .detail_block .detail_main .main_info .prd_btns li.btn_delivery a{
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+  }
+  .detail_block .detail_main .main_info .prd_btns li.c_btn_01 a{
+    /* min-height: auto; */
+    min-height: 60px;
+    padding: 10px 46px;
+  }
+
+  /*detail_ingredient*/
+  .detail_block .detail_ingredient{
+    margin-top: 60px;
+    padding: 20px;
+    border-radius: 40px;
+  }
+  .detail_block .detail_ingredient .detail_ingredient_table{
+    padding: 37px 40px 48px;
+    border-radius: 20px;
+  }
+  .detail_block .detail_ingredient .detail_ingredient_hd{
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  .detail_block .detail_ingredient .detail_ingredient_cnt{
+    margin-top: 40px;
+  }
+  .detail_block .detail_ingredient .ingredient_list{
+    margin-top: 15px;
+  }
+  .detail_block .detail_ingredient .ingredient_list ul li{
+    margin-right: 4.629%;
+    padding-bottom: 20px;
+    font-size: 14px;
+  }
+
+  /*栄養成分*/
+  .detail_block .detail_ingredient .ingredient_list.nutrition_list ul li{
+    width: 16.851%;
+  }
+  .detail_block .detail_ingredient .ingredient_list.nutrition_list ul li:nth-of-type(5n){
+    margin-right: 0;
+  }
+  /*アレルギー特定原材料*/
+  .detail_block .detail_ingredient .ingredient_list.allergy_list ul li{
+    width: 10.277%;
+  }
+  .detail_block .detail_ingredient .ingredient_list.allergy_list ul li:nth-of-type(7n){
+    margin-right: 0;
+  }
+
+  .detail_block .detail_ingredient .detail_ingredient_note{
+    margin-top: 18px;
+  }
+  .detail_block .detail_ingredient .detail_ingredient_note ul li{
+    font-size: 14px;
+  }
+
+  .detail_block .detail_ingredient .c_btn_03{
+    margin: 35px auto 15px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .detail_block .detail_main{
+    margin-top: 20px;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  /*detail_slider*/
+  .detail_block .detail_main .detail_slider .slider ul li{
+    border-radius: 10px;
+  }
+  .detail_block .detail_main .detail_slider .thumbnail{
+    margin-top: 15px;
+  }
+  .detail_block .detail_main .detail_slider .thumbnail ul li{
+    width: 31%;
+    margin-top: 10px;
+    margin-right: 3.5%;
+  }
+  .detail_block .detail_main .detail_slider .thumbnail ul li a{
+    border-radius: 5px;
+  }
+
+  /*main_info*/
+  .detail_block .detail_main .main_info{
+    margin-top: 28px;
+  }
+  .detail_block .detail_main .main_info .cat_tag{
+    margin-top: 30px;
+  }
+  .detail_block .detail_main .main_info .cat_tag ul li{
+    width: calc((100% - 8px) / 2);
+    margin-bottom: 7px;
+    margin-right: 7px;
+    font-size: 10px;
+  }
+  .detail_block .detail_main .main_info .cat_tag ul li .cat_tag_txt{
+    width: 86.666vw;
+    max-width: calc(200% + 8px);
+    top: 33px;
+  }
+  .detail_block .detail_main .main_info .cat_tag ul li:nth-child(2n){
+    margin-right: 0;
+  }
+  .detail_block .detail_main .main_info .cat_tag ul li:nth-child(2n) .cat_tag_txt{
+    left: auto;
+    right: 0;
+  }
+  .detail_block .detail_main .main_info .cat_tag ul li .cat_tag_txt::before,
+  .detail_block .detail_main .main_info .cat_tag ul li .cat_tag_txt::after{
+    left: 19.7vw;
+  }
+  .detail_block .detail_main .main_info .cat_tag ul li:nth-child(2n) .cat_tag_txt::before,
+  .detail_block .detail_main .main_info .cat_tag ul li:nth-child(2n) .cat_tag_txt::after{
+    left: auto;
+    right: 19.7vw;
+  }
+  .detail_block .detail_main .main_info .prd_num{
+    margin-top: 25px;
+  }
+  .detail_block .detail_main .main_info .prd_num p{
+    padding: 0.5em;
+    font-size: 10px;
+  }
+  .detail_block .detail_main .main_info .prd_exp{
+    margin-top: 10px;
+  }
+  .detail_block .detail_main .main_info .prd_price{
+    margin-top: 15px;
+  }
+  .detail_block .detail_main .main_info .prd_price .prd_price_hd{
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .detail_block .detail_main .main_info .prd_price .prd_price_takeout{
+    margin-top: 10px;
+  }
+  .detail_block .detail_main .main_info .prd_price .prd_price_eatin{
+    margin-top: 5px;
+  }
+  .detail_block .detail_main .main_info .prd_price .prd_price_takeout dt,
+  .detail_block .detail_main .main_info .prd_price .prd_price_eatin dt{
+    width: 15em;
+  }
+  .detail_block .detail_main .main_info .prd_price .prd_price_takeout dd .unit,
+  .detail_block .detail_main .main_info .prd_price .prd_price_eatin dd .unit{
+    font-size: 14px;
+  }
+  .detail_block .detail_main .main_info .prd_price .prd_price_takeout dd .price,
+  .detail_block .detail_main .main_info .prd_price .prd_price_eatin dd .price{
+    font-size: 16px;
+  }
+  .detail_block .detail_main .main_info .prd_btns{
+    margin-top: 30px;
+  }
+  .detail_block .detail_main .main_info .prd_note li{
+    font-size: 10px;
+  }
+  .detail_block .detail_main .main_info .prd_btns li{
+    margin-top: 15px;
+  }
+  .detail_block .detail_main .main_info .prd_btns li.btn_shop a,
+  .detail_block .detail_main .main_info .prd_btns li.btn_order a,
+  .detail_block .detail_main .main_info .prd_btns li.btn_delivery a{
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+  .detail_block .detail_main .main_info .prd_btns li.c_btn_01 a{
+    aspect-ratio: 237 / 76;
+  }
+  .detail_block .detail_main .main_info .prd_btns li a:after{
+    width: 1.86vw;
+    right: 4.86vw;
+  }
+  .detail_block .detail_main .main_info .prd_btns li a img{
+    width: 100%;
+  }
+  .detail_block .detail_main .main_info .prd_note{
+    margin-top: 20px;
+  }
+
+  /*detail_ingredient*/
+  .detail_block .detail_ingredient{
+    margin-top: 40px;
+    padding: 25px;
+    border-radius: 20px;
+  }
+  .detail_block .detail_ingredient .detail_ingredient_hd{
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .detail_block .detail_ingredient .detail_ingredient_cnt{
+    margin-top: 28px;
+  }
+  .detail_block .detail_ingredient .detail_ingredient_table{
+    padding: 15px 20px 23px;
+    border-radius: 10px;
+  }
+  .detail_block .detail_ingredient .ingredient_list{
+    margin-top: 10px;
+  }
+  .detail_block .detail_ingredient .ingredient_list ul{
+    flex-wrap: wrap;
+  }
+  .detail_block .detail_ingredient .ingredient_list ul li{
+    margin-top: 5px;
+    padding-bottom: 8px;
+    font-size: 10px;
+  }
+  .detail_block .detail_ingredient .ingredient_list ul li .sep{
+    font-weight: bold;
+  }
+  /*栄養成分*/
+  .detail_block .detail_ingredient .ingredient_list.nutrition_list ul li{
+    width: 45.614%;
+    margin-right: 8.772%;
+  }
+  .detail_block .detail_ingredient .ingredient_list.nutrition_list ul li:nth-of-type(2n){
+    margin-right: 0;
+  }
+  .detail_block .detail_ingredient .ingredient_list.nutrition_list ul li:nth-of-type(-n+2){
+    margin-top: 0;
+  }
+  /*アレルギー特定原材料*/
+  .detail_block .detail_ingredient .ingredient_list.allergy_list ul li{
+    width: 19.298%;
+    width: 21%;
+    margin-right: 5.333%;
+  }
+  .detail_block .detail_ingredient .ingredient_list.allergy_list ul li:nth-of-type(4n){
+    margin-right: 0;
+  }
+  .detail_block .detail_ingredient .ingredient_list.allergy_list ul li:nth-of-type(-n+4){
+    margin-top: 0;
+  }
+
+  .detail_block .detail_ingredient .detail_ingredient_note{
+    margin-top: 18px;
+  }
+  .detail_block .detail_ingredient .detail_ingredient_note ul li{
+    font-size: 10px;
+  }
+
+  .detail_block .detail_ingredient .c_btn_03{
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width:520px) {
+  .detail_block .detail_main .main_info .prd_btns li.c_btn_01 a{
+    min-height: 40px;
+    padding: 1.1em 2em;
+    font-size: 10px;
+  }
+}
+
+/* mod_bnr_area
+-------------------------------------------------- */
+@media print, screen and (min-width:768px){
+  .mod_bnr_area{
+    margin-top: 80px;
+  }
+}
+@media screen and (max-width:767px) {
+  .mod_bnr_area{
+    margin-top: 50px;
+  }
+  .mod_bnr_area .mod_bnr{
+    margin-top: 30px;
+  }
+}
+
+
+/* フリーエリア
+-------------------------------------------------- */
+@media print, screen and (min-width:768px){
+  .detail_sec_wrap{
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .detail_sec_wrap{
+    margin-top: 30px;
+  }
+}
+
+/* movie_sec
+-------------------------------------------------- */
+.movie_area .ttl{
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.16em;
+}
+.movie_area .movie_box{
+  position: relative;
+  height: 0;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  background-color: #ccc;
+}
+.movie_area .movie_box iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media print, screen and (min-width:768px){
+  .movie_area{
+    margin-top: 60px;
+  }
+  .movie_area .ttl{
+    font-size: 30px;
+    padding-bottom: 32px;
+  }
+  .movie_area .movie_box{
+    width: 57.142%;
+    padding-top: 32.142%;
+  }
+}
+@media screen and (max-width:767px) {
+  .movie_block{
+    position: relative;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .movie_inner{
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .movie_area{
+    margin-top: 40px;
+  }
+  .movie_area .ttl{
+    font-size: 18px;
+    padding-bottom: 15px;
+  }
+  .movie_area .movie_box{
+    width: 100%;
+    padding-top: 56.25%;
+  }
+}
+
+.detail_notice {
+  border-top: dashed 1px;
+  border-bottom: dashed 1px;
+  padding-bottom: 1em;
+}
+
+/* eiyou
+-------------------------------------------------- */
+
+.eiyou_area .clm2_1 {
+  padding: 0 23px 35px;
+}
+.eiyou_area .clm2_1:nth-child(3){
+  margin-bottom: 32px;
+  border-bottom: 1px solid #ccc;
+}
+.eiyou_area .c_box_inner p em{
+  line-height: 1.4;
+  color: #551900;
+  font-weight: bold;
+}
+.eiyou_area .p10 {
+  padding: 10px 0 0;
+}
+.eiyou_area .txt_Bg01 {
+  position: relative;
+  padding-left: 50px;
+}
+.eiyou_area .txt_Bg01::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 33px;
+  height: 33px;
+  background: url('../images/icon_01.png') no-repeat left center;
+  background-size: 100%;
+}
+.eiyou_area .txt_Bg02 {
+  position: relative;
+  padding-left: 51px;
+}
+.eiyou_area .txt_Bg03::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 70px;
+  height: 40px;
+  background: url('../images/icon_03.png') no-repeat left center;
+  background-size: 100%;
+}
+.eiyou_area .txt01 {
+  padding: 12px 0;
+}
+.eiyou_area .subText01 {
+  padding-left: 21px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+@media print, screen and (min-width:768px){
+  .eiyou_area .content_block {
+    padding: 0;
+  }
+  .eiyou_area .txt_Bg01 {
+    padding-left: 23px; 
+  }
+  .eiyou_area .content_block {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 535px){
+  .eiyou_area .txt_Bg01 {
+    display: block;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 767px) {
+  .eiyou_area .clm2_1 {
+    margin-bottom: 16px;
+    padding: 0 0 17px;
+  }
+  .eiyou_area .txt_Bg01::before {
+    width: 21px;
+    height: 21px;
+  }
+  .eiyou_area .txt_Bg02 {
+    padding-left: 27px;
+  }
+  .eiyou_area .txt_Bg02::before {
+    width: 18px;
+    height: 18px;
+  }
+  .eiyou_area .txt_Bg03 {
+    margin-bottom: 24px;
+    padding-left: 56px;
+  }
+  .eiyou_area .txt_Bg03::before {
+    width: 49px;
+    height: 28px;
+  }
+  .eiyou_area .subText01 {
+    padding-left: 0;
+  }
+}
